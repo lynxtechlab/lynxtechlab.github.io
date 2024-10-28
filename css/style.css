@@ -1,6 +1,6 @@
 /********** Template CSS **********/
 :root {
-    --primary: #F3525A;
+    --primary: #604d47;
     --secondary: #F6F6F6;
     --light: #FFFFFF;
     --dark: #152440;
@@ -130,7 +130,7 @@ h6,
     }
 
     .carousel-caption h1 {
-        font-size: 14px;
+        font-size: 20px;
         font-weight: 500 !important;
     }
 }
