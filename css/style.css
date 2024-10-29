@@ -1,6 +1,6 @@
 /********** Template CSS **********/
 :root {
-    --primary: #604d47;
+    --primary: #604D47;
     --secondary: #F6F6F6;
     --light: #FFFFFF;
     --dark: #152440;
@@ -25,11 +25,11 @@ h6,
 }
 
 .pt-6 {
-    padding-top: 90px;
+    padding-top: 20px;
 }
 
 .pb-6 {
-    padding-bottom: 90px;
+    padding-bottom: 20px;
 }
 
 .py-6 {
@@ -78,6 +78,7 @@ h6,
     z-index: 99;
 }
 
+/*
 .top-shape::before {
     position: absolute;
     content: "";
@@ -88,6 +89,7 @@ h6,
     background: var(--primary);
     transform: skew(40deg);
 }
+*/
 
 .navbar-light .navbar-nav .nav-link {
     font-family: 'Barlow', sans-serif;
