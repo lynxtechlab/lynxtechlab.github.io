@@ -1,3 +1,5 @@
+# <i class="fa-sharp fa-solid fa-shield-cat"></i>LynxTechLab
+
 # Disclaimer
 
 <span style="color: red;">**This site does not take responsibility for any data that is scraped or used from external sources. Users are encouraged to respect and follow the terms of service and privacy policies of the data providers. Data scraping should be conducted responsibly and in compliance with all applicable laws and regulations. The following information is provided for educational purposes only, with the aim of explaining methods for accessing real-time data. This guidance is intended solely to demonstrate data access methods from publicly available sources on a well-known Webtrader platform. Users are responsible for complying with all applicable laws, terms of service, and the platform’s data usage policies. Unauthorized data scraping or misuse of this information is strictly discouraged.**</span>
@@ -840,7 +842,6 @@ while (nowtime>=595 and nowtime<=1095 and weekno<5 and loop and bizday) or TestM
   max-width: 80% !important;
   margin: auto;
 }
-
-
 </style>
 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
