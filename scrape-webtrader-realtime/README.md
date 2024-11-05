@@ -839,7 +839,7 @@ while (nowtime>=595 and nowtime<=1095 and weekno<5 and loop and bizday) or TestM
 
 <style type="text/css">
 .markdown-body {
-  max-width: 80% !important;
+  max-width: 90% !important;
   margin: auto;
 }
 </style>
