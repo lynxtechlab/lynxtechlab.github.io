@@ -329,6 +329,12 @@ pre{
     color: #777A7A;
 }
 
+.content img{
+    max-width: 40%;
+    height: auto;
+    display: block;
+}
+
 
 /* burger-menu-icon
 ----------------------------------------------------------------------------------------*/
