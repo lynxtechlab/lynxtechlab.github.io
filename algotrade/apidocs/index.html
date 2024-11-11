@@ -39,15 +39,15 @@
     <div class="mobile-menu-closer"></div>
     <div class="content-menu">
         <div class="content-infos">
-            <div class="info"><b>Version:</b> Under Construction</div>
+            <div class="info"><b>Version:</b>1.0</div>
             <div class="info"><b>Last Updated:</b> 10th Nov, 2024</div>
         </div>
         <ul>
             <li class="scroll-to-link active" data-target="content-get-started">
                 <a>GET STARTED</a>
             </li>
-            <li class="scroll-to-link" data-target="content-get-characters">
-                <a>Get High-Low Signals</a>
+            <li class="scroll-to-link" data-target="content-1">
+                <a>Get Last High-Low Signal</a>
             </li>
             <li class="scroll-to-link" data-target="content-errors">
                 <a>Errors</a>
@@ -65,7 +65,7 @@ API Endpoint
 https://algotrade.lynxtechlab.com/
             </pre>
             <p>
-				Welcome to LynxTechLab’s Algo Trade API – your gateway to automated, data-driven trading. Our API endpoints provide real-time trading signals and algorithmic decisions, designed to support seamless integration into your trading strategies and bots. With LynxTechLab, you gain access to a comprehensive suite of tools, from technical indicators to trend analysis, enabling rapid, precise decision-making.
+			Welcome to LynxTechLab’s Algo Trade API – your gateway to automated, data-driven trading. Our API endpoints provide real-time trading signals and algorithmic decisions, designed to support seamless integration into your trading strategies and bots. With LynxTechLab, you gain access to a comprehensive suite of tools, from technical indicators to trend analysis, enabling rapid, precise decision-making.
             </p>
 			
 			<!--
@@ -78,153 +78,64 @@ https://algotrade.lynxtechlab.com/
             </p>
 			-->
 			<p>
-				We’re excited to announce that our API services are currently under construction and will be available soon! At LynxTechLab, we are working hard to bring you powerful, real-time algorithmic trading endpoints designed to elevate your trading strategies. Stay tuned for updates, and get ready to integrate advanced trading insights seamlessly into your platforms. Thank you for your patience and interest – we can’t wait to share our API with you!
+			We are continuously building and expanding our API services to provide even more value. You can enjoy the current APIs available, and rest assured—new APIs with additional functionality are on the way! We appreciate your patience and look forward to delivering more powerful tools to support your needs.
 			</p>
-			<img alt="under construction" title="Under Construction" src="images/working.jpg"/>
+			<!--<img alt="under construction" title="Under Construction" src="images/working.jpg"/>-->
         </div>
-		<!--
-        <div class="overflow-hidden content-section" id="content-get-characters">
-            <h2>get characters</h2>
+		
+        <div class="overflow-hidden content-section" id="content-1">
+            <h2>Get Last High-Low Signal</h2>
             <pre><code class="bash">
 # Here is a curl example
-curl \
--X POST http://api.westeros.com/character/get \
--F 'secret_key=your_api_key' \
--F 'house=Stark,Bolton' \
--F 'offset=0' \
--F 'limit=50'
-                </code></pre>
+curl\
+-X GET https://algotrade.lynxtechlab.com/api/public/highlowyearchart/getlastsignal
+            </code></pre>
             <p>
-                To get characters you need to make a POST call to the following url :<br>
-                <code class="higlighted break-word">http://api.westeros.com/character/get</code>
+                To get high-low last signal you need to make a GET call to the following url :<br>
+                <code class="higlighted break-word">https://algotrade.lynxtechlab.com/api/public/highlowyearchart/getlastsignal</code>
+				<a href="https://algotrade.lynxtechlab.com/api/public/highlowyearchart/getlastsignal" target="_blank">Open in new tab</a>
             </p>
             <br>
             <pre><code class="json">
 Result example :
-
-{
-  query:{
-    offset: 0,
-    limit: 50,
-    house: [
-      "Stark",
-      "Bolton"
-    ],
+[
+  {
+    "Symbol": "ISMEN",
+    "HL Date": "2024-10-21T00:00:00.000Z",
+    "HL Price": 31.32,
+    "HL Flag": "LL",
+    "HL Active Timespan (mins)": 212,
+    "HL Detection Last Updated": "2024-11-11T13:24:34.000Z",
+    "HL Date Prev": null,
+    "HL Price Prev": null,
+    "HL Flag Prev": null,
+    "HL Active Timespan (mins) Prev": null,
+    "HL Detection Last Updated Prev": null
+  },
+  {
+    "Symbol": "ALARK",
+    "HL Date": "2024-11-08T00:00:00.000Z",
+    "HL Price": 93.6,
+    "HL Flag": "LH",
+    "HL Active Timespan (mins)": 90,
+    "HL Detection Last Updated": "2024-11-11T13:24:43.000Z",
+    "HL Date Prev": "2024-11-04T00:00:00.000Z",
+    "HL Price Prev": 83.1,
+    "HL Flag Prev": "HL",
+    "HL Active Timespan (mins) Prev": 122,
+    "HL Detection Last Updated Prev": "2024-11-11T13:05:37.000Z"
   }
-  result: [
-    {
-      id: 1,
-      first_name: "Jon",
-      last_name: "Snow",
-      alive: true,
-      house: "Stark",
-      gender: "m",
-      age: 14,
-      location: "Winterfell"
-    },
-    {
-      id: 2,
-      first_name: "Eddard",
-      last_name: "Stark",
-      alive: false,
-      house: "Stark",
-      gender: "m",
-      age: 35,
-      location: 'Winterfell'
-    },
-    {
-      id: 3,
-      first_name: "Catelyn",
-      last_name: "Stark",
-      alive: false,
-      house: "Stark",
-      gender: "f",
-      age: 33,
-      location: "Winterfell"
-    },
-    {
-      id: 4,
-      first_name: "Roose",
-      last_name: "Bolton",
-      alive: false,
-      house: "Bolton",
-      gender: "m",
-      age: 40,
-      location: "Dreadfort"
-    },
-    {
-      id: 5,
-      first_name: "Ramsay",
-      last_name: "Snow",
-      alive: false,
-      house: "Bolton",
-      gender: "m",
-      age: 15,
-      location: "Dreadfort"
-    },
-  ]
-}
-                </code></pre>
+]
+
+            </code></pre>
             <h4>QUERY PARAMETERS</h4>
             <table class="central-overflow-x">
-                <thead>
-                <tr>
-                    <th>Field</th>
-                    <th>Type</th>
-                    <th>Description</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>secret_key</td>
-                    <td>String</td>
-                    <td>Your API key.</td>
-                </tr>
-                <tr>
-                    <td>search</td>
-                    <td>String</td>
-                    <td>(optional) A search word to find character by name.</td>
-                </tr>
-                <tr>
-                    <td>house</td>
-                    <td>String</td>
-                    <td>
-                        (optional) a string array of houses:
-                    </td>
-                </tr>
-                <tr>
-                    <td>alive</td>
-                    <td>Boolean</td>
-                    <td>
-                        (optional) a boolean to filter alived characters
-                    </td>
-                </tr>
-                <tr>
-                    <td>gender</td>
-                    <td>String</td>
-                    <td>
-                        (optional) a string to filter character by gender:<br>
-                        m: male<br>
-                        f: female
-                    </td>
-                </tr>
-                <tr>
-                    <td>offset</td>
-                    <td>Integer</td>
-                    <td>(optional - default: 0) A cursor for use in pagination. Pagination starts offset the specified offset.</td>
-                </tr>
-                <tr>
-                    <td>limit</td>
-                    <td>Integer</td>
-                    <td>(optional - default: 10) A limit on the number of objects to be returned, between 1 and 100.</td>
-                </tr>
-                </tbody>
             </table>
         </div>
         <div class="overflow-hidden content-section" id="content-errors">
             <h2>Errors</h2>
             <p>
-                The Westeros API uses the following error codes:
+                This API uses the following error codes:
             </p>
             <table>
                 <thead>
@@ -235,27 +146,9 @@ Result example :
                 </thead>
                 <tbody>
                 <tr>
-                    <td>X000</td>
+                    <td>429</td>
                     <td>
-                        Some parameters are missing. This error appears when you don't pass every mandatory parameters.
-                    </td>
-                </tr>
-                <tr>
-                    <td>X001</td>
-                    <td>
-                        Unknown or unvalid <code class="higlighted">secret_key</code>. This error appears if you use an unknow API key or if your API key expired.
-                    </td>
-                </tr>
-                <tr>
-                    <td>X002</td>
-                    <td>
-                        Unvalid <code class="higlighted">secret_key</code> for this domain. This error appears if you use an  API key non specified for your domain. Developper or Universal API keys doesn't have domain checker.
-                    </td>
-                </tr>
-                <tr>
-                    <td>X003</td>
-                    <td>
-                        Unknown or unvalid user <code class="higlighted">token</code>. This error appears if you use an unknow user <code class="higlighted">token</code> or if the user <code class="higlighted">token</code> expired.
+                        You have submitted too many requests. A maximum of 5 requests per second is allowed.
                     </td>
                 </tr>
                 </tbody>
