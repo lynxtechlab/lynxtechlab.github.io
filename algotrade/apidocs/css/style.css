@@ -318,6 +318,7 @@ pre{
     vertical-align: bottom;
     text-align: left;
     line-height: 1.6;
+	word-wrap: break-word;
 }
 .content table td {
     padding: 5px 18px 5px 0;
@@ -328,6 +329,7 @@ pre{
     font-weight: 300;
     color: #777A7A;
     /*font-size: 0.925em;*/
+	word-wrap: break-word;
 }
 
 .content img{
