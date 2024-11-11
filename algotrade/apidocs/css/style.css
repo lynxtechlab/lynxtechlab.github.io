@@ -525,6 +525,10 @@ body.one-content-column-version .content thead {
     .burger-menu-icon {
         display: block;
     }
+	
+	.central-overflow-x table{
+		font-size: 0.500em;
+	}
 }
 
 /* BROWSER AND NON-SEMANTIC STYLING
