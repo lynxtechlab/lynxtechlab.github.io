@@ -48,7 +48,10 @@
                 <a>GET STARTED</a>
             </li>
             <li class="scroll-to-link" data-target="content-1">
-                <a>Get Last High-Low Signal</a>
+                <a>Get High-Low Signal</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-2">
+                <a>Get StockStats Signal</a>
             </li>
             <li class="scroll-to-link" data-target="content-errors">
                 <a>Errors</a>
@@ -85,17 +88,22 @@ https://algotrade.lynxtechlab.com/
         </div>
 		
         <div class="overflow-hidden content-section" id="content-1">
-            <h2>Get Last High-Low Signal</h2>
+            <h2>Get High-Low Signal</h2>
             <pre><code class="bash">
 # Here is a curl example
 curl\
 -X GET https://algotrade.lynxtechlab.com/api/public/highlowyearchart/getlastsignal
+-X GET https://algotrade.lynxtechlab.com/api/public/highlow2yearchart/getlastsignal
             </code></pre>
-            <p>To get high-low last signal you need to make a GET call to the following url :<br>
+            <p>To get last signal from <mark>year to date</mark> high-low you need to make a GET call to the following url:<br>
             <code class="higlighted break-word">https://algotrade.lynxtechlab.com/api/public/highlowyearchart/getlastsignal</code><br>
             <a href="https://algotrade.lynxtechlab.com/api/public/highlowyearchart/getlastsignal" target="_blank">Open endpoint in new tab</a>
 			</p>
             <br>
+            <p>To get last signal from <mark>2 year to date</mark> high-low you need to make a GET call to the following url:<br>
+            <code class="higlighted break-word">https://algotrade.lynxtechlab.com/api/public/highlow2yearchart/getlastsignal</code><br>
+            <a href="https://algotrade.lynxtechlab.com/api/public/highlow2yearchart/getlastsignal" target="_blank">Open endpoint in new tab</a>
+			</p>
             <pre><code class="json">
 Result example :
 [
@@ -126,7 +134,6 @@ Result example :
     "HL Detection Last Updated Prev": "2024-11-11T13:05:37.000Z"
   }
 ]
-
             </code></pre>
             <h4>Query Parameters</h4>
             <table class="central-overflow-x">
@@ -137,7 +144,6 @@ Result example :
 			</thead>
 			<tbody>
 			<tr>
-			<td>Not Applicable</td>
 			</tr>
 			</tbody>
 			</table>
@@ -196,6 +202,128 @@ Result example :
 				<tr>
 				<td>HL Detection Last Updated</td>
 				<td>The last time, the flag was calculated using the current price.</td>
+				</tr>
+				</tbody>
+			</table>
+			<br>
+        </div>
+        <div class="overflow-hidden content-section" id="content-2">
+            <h2>Get StockStats Signal</h2>
+            <pre><code class="bash">
+# Here is a curl example
+curl\
+-X GET https://algotrade.lynxtechlab.com/api/public/statsyeartodate/getlastsignal
+            </code></pre>
+            <p>To get last signal from <mark>year to date</mark> stats you need to make a GET call to the following url:<br>
+            <code class="higlighted break-word">https://algotrade.lynxtechlab.com/api/public/statsyeartodate/getlastsignal</code><br>
+            <a href="https://algotrade.lynxtechlab.com/api/public/statsyeartodate/getlastsignal" target="_blank">Open endpoint in new tab</a>
+			</p>
+            <br>
+            <pre><code class="json">
+Result example :
+[
+  {
+    "symbol": "AEFES",
+    "timefetch": "2024-11-15T19:00:00.000Z",
+    "rsi": 56.72779,
+    "rsv": 79.545455,
+    "macd_histogram": 3.57727,
+    "macd": 4.528974,
+    "macd_signal": 0.951704,
+    "macd_H_B1d": 3.883123,
+    "macd_H_B2d": 3.607683,
+    "macd_H_B3d": 3.337955,
+    "macd_H_B4d": 2.736299,
+    "kdj_K": 84.240154,
+    "kdj_D": 80.684929,
+    "kdj_J": 91.350604,
+    "kdj_J_B1d": 101.947878,
+    "kdj_J_B2d": 106.864693,
+    "kdj_J_B3d": 105.154595,
+    "kdj_J_B4d": 101.427541,
+    "cci": 147.887324,
+    "aroon": 46.666667,
+    "roc": 11.331593,
+    "supertrend_lowerband": 210.839247,
+    "supertrend_upperband": 220.58294,
+    "boll_lowerband": 169.584967,
+    "boll": 194.566667,
+    "boll_upperband": 219.548367,
+    "ema5": 211.110545,
+    "ema20": 199.86834,
+    "ema50": 203.111773,
+    "ema100": 211.492727,
+    "ema200": 216.850895,
+    "high": 221.3,
+    "low": 213.2,
+    "ftr": 2.670215,
+    "ftr_preday_diff": 0.247875
+  }
+]
+            </code></pre>
+            <h4>Query Parameters</h4>
+            <table class="central-overflow-x">
+			<thead>
+			<tr>
+			<th>Not Applicable</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+			</tr>
+			</tbody>
+			</table>
+			
+			<br>
+			<h4>Information</h4>
+			<table class="central-overflow-x">
+				<thead>
+				<tr>
+				<th>Limitations</th>
+				<th>Details</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+				<td>Data Refresh Rate</td>
+				<td>Approximately 2 to 3 minutes.</td>
+				</tr>
+				<tr>
+				<td>Security and Rate Limits</td>
+				<td>Up to 5 requests per second.</td>
+				</tr>
+				<tr>
+				<td>Support</td>
+				<td>The free version supports select stocks. Contact us for premium features.</td>
+				</tr>
+				</tbody>
+			</table>
+			
+			<br>
+			<h4>Understading key API response data</h4>
+			<table class="central-overflow-x">
+				<thead>
+				<tr>
+				<th>Key Name</th>
+				<th>Value Description</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+				<td>macd_H_B1d</td>
+				<td>MACD histogram before 1 day. Should be compared to the current MACD histogram trend. <a href="https://www.barchart.com/education/technical-indicators/macd_oscillator" target="_blank">barchart.com>MACD Oscillator</a></td>
+				</tr>
+                <tr>
+				<td>kdj_J_B1d</td>
+				<td>J line before 1 day. Should be compared to the current J line trend. <a href="https://www.liberatedstocktrader.com/kdj-indicator/" target="_blank">liberatedstocktrader.com>KDJ Indicator</a></td>
+				</tr>
+                <tr>
+				<td>ftr</td>
+				<td>The Gaussian Fisher Transform Price Reversals <a href="https://www.tradingview.com/script/ajZT2tZo-Gaussian-Fisher-Transform-Price-Reversals-FTR/" target="_blank">tradingview.com>Gaussian Fisher Transform</a></td>
+				</tr>
+                <tr>
+				<td>ftr_preday_diff</td>
+				<td>Difference the current day's FTR to the previous day's to identify the trend.</td>
 				</tr>
 				</tbody>
 			</table>
