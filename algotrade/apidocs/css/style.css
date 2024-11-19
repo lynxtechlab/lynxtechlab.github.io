@@ -58,8 +58,10 @@ i{
     overflow: hidden;
 }
 .content a{
-    color: #00a8e3;
+    /*color: #00a8e3;*/
+    color: #20C997;
     text-decoration: none;
+    font-weight: 400;
 }
 .content a:hover{
     text-decoration: underline;
