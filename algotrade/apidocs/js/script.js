@@ -86,3 +86,25 @@ window.addEventListener('scroll', function (e) {
     e.preventDefault();
     onScroll();
 });
+
+async function fetchAPIstatus(){
+    cancel = 15000
+    url = `https://algotrade.lynxtechlab.com/api/public/`;
+	var data = await fetch(url,{ signal: AbortSignal.timeout(cancel) }).then(response => {
+	if (!response.ok) {
+        return { message: "Something went wrong!" };
+	}
+	return response.json();
+	});
+    await console.log(data.message);
+    if (data.message == "Success!"){
+        document.getElementById("apistatus").innerHTML = '<b>Endpoint Current Status: </b> &#9989;';
+    }
+    else{
+        document.getElementById("apistatus").innerHTML = "<b>Endpoint Current Status: </b> Uh-Oh something went wrong. Try again later.";
+    }
+    
+    
+}
+
+fetchAPIstatus();
