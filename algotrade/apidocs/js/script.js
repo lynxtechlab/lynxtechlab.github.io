@@ -87,6 +87,12 @@ window.addEventListener('scroll', function (e) {
     onScroll();
 });
 
+
+function noDelaySetInterval(func, interval) { 
+            func(); 
+            return window.setInterval(func, interval); 
+    } 
+
 async function fetchAPIstatus(){
     cancel = 15000
     url = `https://algotrade.lynxtechlab.com/api/public/`;
@@ -107,4 +113,4 @@ async function fetchAPIstatus(){
     
 }
 
-fetchAPIstatus();
+noDelaySetInterval(fetchAPIstatus, 30000); 
