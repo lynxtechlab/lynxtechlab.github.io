@@ -94,20 +94,26 @@ function noDelaySetInterval(func, interval) {
     } 
 
 async function fetchAPIstatus(){
-    cancel = 15000
+    cancel = 5000
+    
+    var errdata = {'message': 'Unexpected error'};
+            
     url = `https://algotrade.lynxtechlab.com/api/public/`;
 	var data = await fetch(url,{ signal: AbortSignal.timeout(cancel) }).then(response => {
-	if (!response.ok) {
-        return { message: "Something went wrong!" };
-	}
-	return response.json();
-	});
-    await console.log(data.message);
+	if (response.ok) {return response.json();}}).catch((error) => {
+        console.log(error); 
+        return errdata;
+        });
+    
+    
+
+    
+    console.log(data)
     if (data.message == "Success!"){
         document.getElementById("apistatus").innerHTML = '<b>Endpoint Current Status: </b> &#9989;';
     }
     else{
-        document.getElementById("apistatus").innerHTML = "<b>Endpoint Current Status: </b> Uh-Oh something went wrong. Try again later.";
+        document.getElementById("apistatus").innerHTML = "<b>Endpoint Current Status: </b> &#10060; <p><b style='color:red !important;'>Uh-Oh something went wrong.<br>Try again later.</b></p>";
     }
     
     
