@@ -367,6 +367,13 @@ Result example :
     <div class="content-code"></div>
 </div>
 
-<script src="js/script.js?ts=202412091040"></script>
+<script>
+  const script = document.createElement('script');
+  script.src = `js/script.js?v=${new Date().getTime()}`; // Unique timestamp
+  document.body.appendChild(script);
+</script>
+
+<!--<script src="js/script.js?ts=202412091040"></script>-->
+
 </body>
 </html>
