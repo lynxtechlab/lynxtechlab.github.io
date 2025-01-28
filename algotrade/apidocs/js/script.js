@@ -1,13 +1,13 @@
 
 //code to run once when page loaded
-if (!sessionStorage.getItem('hasRun')) {
+if (!sessionStorage.getItem('hasRunAlgo')) {
   //code to run once
   
   //Force Reload With Cache-Busting
   window.location.href = `index.html?v=${new Date().getTime()}`;
   
   // Set the flag
-  sessionStorage.setItem('hasRun', 'true');
+  sessionStorage.setItem('hasRunAlgo', 'true');
 }
 
 var elements = [];
