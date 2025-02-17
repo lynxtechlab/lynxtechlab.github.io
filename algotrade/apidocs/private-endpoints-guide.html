@@ -7,12 +7,14 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.0.3/showdown.min.js"></script>
     <script defer>
+        
         fetch('private-endpoints-guide.md')
         .then(response => response.text())
         .then(text => {
             let converter = new showdown.Converter();
             document.getElementById('content').innerHTML = converter.makeHtml(text);
         });
+        window.location.href = `private-endpoints-guide.html?v=${new Date().getTime()}`;
     </script>
     
     <style>
