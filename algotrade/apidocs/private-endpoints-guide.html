@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.0.3/showdown.min.js"></script>
+    <script>
+        fetch('private-endpoints-guide.md')
+        .then(response => response.text())
+        .then(text => {
+            let converter = new showdown.Converter();
+            document.getElementById('content').innerHTML = converter.makeHtml(text);
+        });
+    </script>
+</head>
+<body>
+    <div id="content"></div>
+</body>
+</html>
