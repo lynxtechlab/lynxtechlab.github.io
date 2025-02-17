@@ -7,19 +7,18 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.0.3/showdown.min.js"></script>
     <script defer>
-        
-
-        if (!sessionStorage.getItem('hasRun-private-endpoints')) {
-          //code to run once
           fetch('private-endpoints-guide.md')
             .then(response => response.text())
             .then(text => {
                 let converter = new showdown.Converter();
                 document.getElementById('content').innerHTML = converter.makeHtml(text);
           });
+
+        if (!sessionStorage.getItem('hasRun-private-endpoints')) {
+          //code to run once
           
           //Force Reload With Cache-Busting
-          window.location.href = `index.html?v=${new Date().getTime()}`;
+          window.location.href = `private-endpoints-guide.html?v=${new Date().getTime()}`;
           
           // Set the flag
           sessionStorage.setItem('hasRun-private-endpoints', 'true');
