@@ -1,10 +1,18 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+    <style>
+        body {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+    </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.0.3/showdown.min.js"></script>
     <script defer>
         fetch('private-endpoints-guide.md')
@@ -14,12 +22,10 @@
             document.getElementById('content').innerHTML = converter.makeHtml(text);
         });
     </script>
-    
-    <style>
-    </style>
-
 </head>
-<body>
+
+<body class="markdown-body">
     <div id="content"></div>
 </body>
+
 </html>
