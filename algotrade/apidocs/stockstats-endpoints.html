@@ -21,6 +21,16 @@
             let converter = new showdown.Converter();
             document.getElementById('content').innerHTML = converter.makeHtml(text);
         });
+        
+        if (!sessionStorage.getItem('hasRun-stockstats-endpoints')) {
+          //code to run once
+          
+          //Force Reload With Cache-Busting
+          window.location.href = `stockstats-endpoints.html?v=${new Date().getTime()}`;
+          
+          // Set the flag
+          sessionStorage.setItem('hasRun-stockstats-endpoints', 'true');
+        }
     </script>
 </head>
 
