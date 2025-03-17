@@ -101,47 +101,49 @@ https://algotrade.lynxtechlab.com/charts/indices
             </pre>
             <p><a href="https://algotrade.lynxtechlab.com/charts/indices" target="_blank">Stock Market and Forex Indices</a></p>
         </div>
+        
+        <!--
         <div class="overflow-hidden content-section" id="content-1">
             <h2>Get Higher Highs, Lower Lows Signal</h2>
             <pre><code class="bash">
-# Here is a curl example
-curl\
--X GET https://algotrade.lynxtechlab.com/api/public/highlowyearchart/getlastsignal
-            </code></pre>
+            # Here is a curl example
+            curl\
+            -X GET https://algotrade.lynxtechlab.com/api/public/highlowyearchart/getlastsignal
+                        </code></pre>
             <p>To get last signal from <mark>year to date</mark> high-low you need to make a GET call to the following url:<br>
             <code class="higlighted break-word">https://algotrade.lynxtechlab.com/api/public/highlowyearchart/getlastsignal</code>
             <a href="https://algotrade.lynxtechlab.com/api/public/highlowyearchart/getlastsignal" target="_blank">Open endpoint in new tab</a>
-			</p>
+            </p>
             <pre><code class="json">
-Result example :
-[
-  {
-    "Symbol": "ISMEN",
-    "HL Date": "2024-10-21T00:00:00.000Z",
-    "HL Price": 31.32,
-    "HL Flag": "LL",
-    "HL Active Timespan (mins)": 212,
-    "HL Detection Last Updated": "2024-11-11T13:24:34.000Z",
-    "HL Date Prev": null,
-    "HL Price Prev": null,
-    "HL Flag Prev": null,
-    "HL Active Timespan (mins) Prev": null,
-    "HL Detection Last Updated Prev": null
-  },
-  {
-    "Symbol": "ALARK",
-    "HL Date": "2024-11-08T00:00:00.000Z",
-    "HL Price": 93.6,
-    "HL Flag": "LH",
-    "HL Active Timespan (mins)": 90,
-    "HL Detection Last Updated": "2024-11-11T13:24:43.000Z",
-    "HL Date Prev": "2024-11-04T00:00:00.000Z",
-    "HL Price Prev": 83.1,
-    "HL Flag Prev": "HL",
-    "HL Active Timespan (mins) Prev": 122,
-    "HL Detection Last Updated Prev": "2024-11-11T13:05:37.000Z"
-  }
-]
+                Result example :
+                [
+                  {
+                    "Symbol": "ISMEN",
+                    "HL Date": "2024-10-21T00:00:00.000Z",
+                    "HL Price": 31.32,
+                    "HL Flag": "LL",
+                    "HL Active Timespan (mins)": 212,
+                    "HL Detection Last Updated": "2024-11-11T13:24:34.000Z",
+                    "HL Date Prev": null,
+                    "HL Price Prev": null,
+                    "HL Flag Prev": null,
+                    "HL Active Timespan (mins) Prev": null,
+                    "HL Detection Last Updated Prev": null
+                  },
+                  {
+                    "Symbol": "ALARK",
+                    "HL Date": "2024-11-08T00:00:00.000Z",
+                    "HL Price": 93.6,
+                    "HL Flag": "LH",
+                    "HL Active Timespan (mins)": 90,
+                    "HL Detection Last Updated": "2024-11-11T13:24:43.000Z",
+                    "HL Date Prev": "2024-11-04T00:00:00.000Z",
+                    "HL Price Prev": 83.1,
+                    "HL Flag Prev": "HL",
+                    "HL Active Timespan (mins) Prev": 122,
+                    "HL Detection Last Updated Prev": "2024-11-11T13:05:37.000Z"
+                  }
+                ]
             </code></pre>
             <h4>Query Parameters</h4>
             <table class="central-overflow-x">
@@ -215,6 +217,8 @@ Result example :
 			</table>
 			<br>
         </div>
+        
+        -->
         <div class="overflow-hidden content-section" id="content-2">
             <h2>Get StockStats Signal</h2>
             <pre><code class="bash">
